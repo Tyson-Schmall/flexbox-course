@@ -1,43 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <title>Error Page</title>
+  <meta charset='UTF-8'>
+  <title></title>
+  <style>
 
-    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        body {
-            background-color: lightgoldenrodyellow;
-            font-family: 'Merriweather', serif;
-        }
+    .container {
+      margin: 0;
+      height: calc(100vh - 20px);
+      width: calc(100vw - 20px);
+      border: 10px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .error-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
+    .blocks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
 
-        .error-wrapper > .error-heading {
-            margin-bottom: 42px;
-        }
+    .block {
+      background-color:cadetblue;
+      height: 200px;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        img {
-            width: 50%;
-        }
-    </style>
+    .block1 {
+        flex-basis: 400px;
+    }
+
+    .block2 {
+        flex-basis: 100px;
+    }
+
+    .block3 {
+        flex-basis: 200px;
+    }
+
+  </style>
+
 </head>
 
 <body>
-    <div class="error-wrapper">
-        <div class="error-heading">
-            <h2>Yikes...you broke the web browser. What did you do?</h2>
-        </div>
 
-        <img src="tbot.png" alt="">
-    </div> 
+  <div class="container">
+    <div class="blocks">
+      <div class="block block1">1</div>
+      <div class="block block2">2</div>
+      <div class="block block3">3</div>
+    </div>
+  </div>
+
 </body>
 </html>
