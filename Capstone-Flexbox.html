@@ -1,0 +1,239 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox Capstone(build out a nav bar using specific properties we have learned thus far)</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="cstone.css" />
+
+    <style>
+        .body {
+            margin: 0;
+            font-family: 'Trade Winds', cursive;
+        }
+
+        .container {
+            height: 40px;
+            width: 1fr;
+            display: flex;
+            background-color: rgb(134, 134, 134);
+        }
+
+        .navigation-wrapper {
+            display: flex;
+        }
+
+        .navigation-wrapper > .left-column {
+            display: flex;
+            width: 180px;
+            height: 40px;
+        }
+
+        .navigation-wrapper > .left-column > .name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 180px;
+            background-color: rgb(134, 134, 134);
+        }
+
+        .navigation-wrapper > .left-column > .name a {
+            text-decoration: none;
+        }
+
+        .navigation-wrapper > .left-column > .name:hover {
+            
+        }
+
+        .navigation-wrapper > .center-column {
+            display: flex;
+            height: 40px;
+        }
+
+        .navigation-wrapper > .center-column > .hyperlink {
+            display: flex;
+            background-color: rgb(134, 134, 134);
+        }
+
+        .navigation-wrapper > .right-column {
+            display: flex;
+            margin-left: 1015px;
+        }
+
+        .link {
+            background-color:rgb(134, 134, 134);
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navigation-wrapper">
+            <div class="left-column">
+                <div class="name">
+                    <a href="#">MyName</a>
+                </div>
+            </div>
+
+            <div class="center-column">
+                <div class="hyperlink">
+                    <button class="link" type="submit">Link 1</button>
+                    <button class="link" type="submit">Link 2</button>
+                </div>
+            </div>   
+                
+            <div class="right-column">
+                <div class="right-column-link"></div>
+                    <button class="link" type="submit">Link 3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!-- Above code was my test run, for my capstone, content below this line is the solution -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capstone Solution</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        html {
+            font-family: 'Oxygen', ;
+        }
+
+        .navbar {
+            background-color: #415068;
+        }
+
+        .navbar div {
+            display: none;
+        }
+
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline block;
+        }
+
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: #223047;
+            color: white;
+        }
+
+        .navbar .link:hover,
+        .navbar .link:active {
+            color: #223047;
+            background: white;
+        }
+
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+
+            .navbar div  {
+                display: flex;
+            }
+
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+
+            .navbar .link {
+                width: auto;
+            }
+
+            .navbar .right {
+                justify-content: flex-end;
+            }
+
+            .navbar .toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .navbar .active .toggle {
+                background: #223047;
+                color: white;
+            }
+
+            .navbar .brand {
+                text-align: left;
+            }
+
+            .navbar .active div {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#" class="toggle" id="navHamburger">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="#" class="brand">MyName</a>
+
+        <div class="left">
+            <a href="" class="link">Link 1</a>
+            <a href="" class="link">Link 2</a>
+        </div>
+        <div class="right">
+            <a href="#" class="link">Link 3</a>
+        </div>
+    </div>   
+</body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+
+    navHamburger.addEventListener('click', (e) => {
+        navHamburger.parentEelement.classList.toggle('active');
+    })
+</script>
+
+</html>
